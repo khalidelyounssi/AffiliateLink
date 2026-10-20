@@ -1,1 +1,7 @@
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/AffiliatelinkApplication.java
+/Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/common/exception/BusinessConflictException.java
+/Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/entity/Advertiser.java
+/Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/entity/Niche.java
+/Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/entity/Profile.java
+/Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/entity/ProfileStatus.java
+/Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/entity/Publisher.java
