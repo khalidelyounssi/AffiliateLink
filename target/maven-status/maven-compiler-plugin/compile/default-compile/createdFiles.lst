@@ -1,1 +1,5 @@
+com/affiliateLink/common/exception/GlobalExceptionHandler.class
+com/affiliateLink/profile/service/AdvertiserService.class
+com/affiliateLink/common/exception/ResourceNotFoundException.class
 com/affiliateLink/AffiliatelinkApplication.class
+com/affiliateLink/profile/controller/AdvertiserController.class
