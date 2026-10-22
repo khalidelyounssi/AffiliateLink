@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/advertisers")
@@ -27,6 +28,11 @@ public class AdvertiserController {
     @GetMapping("/{id}")
     public AdvertiserResponse findById(@PathVariable Long id) {
         return service.findById(id);
+    }
+
+    @GetMapping
+    public List<AdvertiserResponse> findAll() {
+        return service.findAll();
     }
 
 }
