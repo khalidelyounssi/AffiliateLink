@@ -30,5 +30,11 @@ public class PublisherService {
         Publisher saved = repository.saveAndFlush(publisher);
         return PublisherResponse.from(saved);
     }
+    @Transactional(readOnly = true)
+    public PublisherResponse findById(Long id) {
+        Publisher publisher = repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Publisher introuvable"));
+        return PublisherResponse.from(publisher);
+    }
 
 }
