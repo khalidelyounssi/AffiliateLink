@@ -3,6 +3,7 @@ package com.affiliateLink.profile.service;
 import com.affiliateLink.common.exception.*;
 import com.affiliateLink.profile.dto.*;
 import com.affiliateLink.profile.entity.Advertiser;
+import com.affiliateLink.profile.entity.Publisher;
 import com.affiliateLink.profile.repository.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +30,12 @@ public class AdvertiserService {
         );
         Advertiser saved = repository.saveAndFlush(advertiser);
         return AdvertiserResponse.from(saved);
+    }
+    @Transactional(readOnly = true)
+    public AdvertiserResponse findById(Long id) {
+        Advertiser advertiser = repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Advertiser introuvable"));
+        return AdvertiserResponse.from(advertiser);
     }
 
 }
