@@ -6,10 +6,7 @@ import com.affiliateLink.profile.dto.PublisherResponse;
 import com.affiliateLink.profile.service.PublisherService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 
@@ -28,6 +25,11 @@ public class PublisherController {
         return ResponseEntity.created(
                 URI.create("/api/publishers/"+ response.id())
         ).body(response);
+    }
+
+    @GetMapping("/{id}")
+    public PublisherResponse findById(@PathVariable Long id) {
+        return service.findById(id);
     }
 
 }

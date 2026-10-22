@@ -24,5 +24,9 @@ public class AdvertiserController {
                 URI.create("/api/advertisers/" + response.id())
         ).body(response);
     }
+    @GetMapping("/{id}")
+    public AdvertiserResponse findById(@PathVariable Long id) {
+        return service.findById(id);
+    }
 
 }
