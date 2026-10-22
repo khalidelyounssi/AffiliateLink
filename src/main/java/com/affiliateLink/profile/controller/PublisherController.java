@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/publishers")
@@ -30,6 +31,12 @@ public class PublisherController {
     @GetMapping("/{id}")
     public PublisherResponse findById(@PathVariable Long id) {
         return service.findById(id);
+    }
+
+    @GetMapping
+    public List<PublisherResponse> findAll() {
+        return service.findAll();
+
     }
 
 }

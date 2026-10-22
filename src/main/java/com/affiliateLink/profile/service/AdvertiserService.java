@@ -8,6 +8,9 @@ import com.affiliateLink.profile.repository.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class AdvertiserService {
     private final AdvertiserRepository repository;
@@ -36,6 +39,15 @@ public class AdvertiserService {
         Advertiser advertiser = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Advertiser introuvable"));
         return AdvertiserResponse.from(advertiser);
+    }
+
+    @Transactional(readOnly = true)
+    public List<AdvertiserResponse> findAll() {
+        List<AdvertiserResponse> responses = new ArrayList<>();
+        for (Advertiser advertiser : repository.findAll()) {
+            responses.add(AdvertiserResponse.from(advertiser));
+        }
+        return responses;
     }
 
 }

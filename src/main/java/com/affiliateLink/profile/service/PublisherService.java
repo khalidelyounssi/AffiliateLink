@@ -7,6 +7,9 @@ import com.affiliateLink.profile.repository.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class PublisherService {
     private final PublisherRepository repository;
@@ -35,6 +38,15 @@ public class PublisherService {
         Publisher publisher = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Publisher introuvable"));
         return PublisherResponse.from(publisher);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PublisherResponse> findAll() {
+        List<PublisherResponse> responses = new ArrayList<>();
+        for (Publisher publisher : repository.findAll()) {
+            responses.add(PublisherResponse.from(publisher));
+        }
+        return responses;
     }
 
 }
