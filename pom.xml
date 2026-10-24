@@ -76,6 +76,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<excludeDockerCompose>false</excludeDockerCompose>
+					<includeOptional>true</includeOptional>
 				</configuration>
 			</plugin>
 		</plugins>

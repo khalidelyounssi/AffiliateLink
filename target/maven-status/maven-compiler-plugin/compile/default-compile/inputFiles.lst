@@ -1,4 +1,5 @@
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/AffiliatelinkApplication.java
+/Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/common/exception/ApiError.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/common/exception/BusinessConflictException.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/common/exception/GlobalExceptionHandler.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/common/exception/ResourceNotFoundException.java
