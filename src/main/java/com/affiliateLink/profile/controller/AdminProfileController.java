@@ -15,6 +15,7 @@ public class AdminProfileController {
         this.service = service;
     }
 
+
     @PatchMapping("/{id}/status")
     public ResponseEntity<Void> changeStatus(
             @PathVariable Long id,

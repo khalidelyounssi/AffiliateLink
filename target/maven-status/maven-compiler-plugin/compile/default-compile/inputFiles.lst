@@ -2,9 +2,11 @@
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/common/exception/BusinessConflictException.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/common/exception/GlobalExceptionHandler.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/common/exception/ResourceNotFoundException.java
+/Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/controller/AdminProfileController.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/controller/AdvertiserController.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/controller/PublisherController.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/dto/AdvertiserResponse.java
+/Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/dto/ChangeStatusRequest.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/dto/CreateAdvertiserRequest.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/dto/CreatePublisherRequest.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/dto/PublisherResponse.java
@@ -17,4 +19,5 @@
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/repository/ProfileRepository.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/repository/PublisherRepository.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/service/AdvertiserService.java
+/Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/service/ProfileService.java
 /Users/macbook/Desktop/AffiliateLink/src/main/java/com/affiliateLink/profile/service/PublisherService.java
