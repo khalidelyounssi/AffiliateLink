@@ -1,4 +1,8 @@
 package com.affiliateLink.offer.entity;
 
-public class CampaignStatus {
+public enum CampaignStatus {
+    DRAFT,
+    ACTIVE,
+    PAUSED,
+    ENDED
 }

@@ -1,4 +1,8 @@
 package com.affiliateLink.offer.entity;
 
-public class PayoutModel {
+public enum PayoutModel {
+    CPC,
+    CPL,
+    CPA_FIXED,
+    CPA_PERCENT
 }
