@@ -29,6 +29,11 @@ public class OffreController {
         return service.update(id, request);
     }
 
+    @GetMapping("/{id}")
+    public OffreDetailResponse get(@PathVariable Long id) {
+        return service.findById(id);
+    }
+
     @GetMapping
     public OffrePageResponse search(
             @RequestParam(required = false) OfferNiche niche,
