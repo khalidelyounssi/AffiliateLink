@@ -7,8 +7,10 @@ import com.affiliateLink.profile.entity.Advertiser;
 import com.affiliateLink.profile.entity.Profile;
 import com.affiliateLink.profile.entity.ProfileStatus;
 import com.affiliateLink.profile.repository.ProfileRepository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@Service
 public class ProfileApiImpl implements ProfileApi {
 
     private final ProfileRepository profileRepository;
@@ -20,17 +22,24 @@ public class ProfileApiImpl implements ProfileApi {
     @Override
     @Transactional
     public void requireActiveAdvertiser(Long advertiserId) {
+        Profile profile = profileRepository
+                .findLockedById(advertiserId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Advertiser introuvable"
+                        )
+                );
 
-        Profile profile = profileRepository.findLockedById(advertiserId).orElseThrow(()->new ResourceNotFoundException("Advertiser introuvable"));
-
-        if(!(profile instanceof Advertiser)){
-            throw new ResourceNotFoundException("Advertiser introuvable");
+        if (!(profile instanceof Advertiser)) {
+            throw new ResourceNotFoundException(
+                    "Advertiser introuvable"
+            );
         }
-        if(profile.getStatus() != ProfileStatus.ACTIVE){
-            throw new BusinessConflictException("Advertiser non actif");
+
+        if (profile.getStatus() != ProfileStatus.ACTIVE) {
+            throw new BusinessConflictException(
+                    "Advertiser non actif"
+            );
         }
-
-
-
     }
 }
