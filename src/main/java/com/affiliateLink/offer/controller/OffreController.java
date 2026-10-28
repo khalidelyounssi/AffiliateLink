@@ -22,4 +22,10 @@ public class OffreController {
         OffreResponse response = service.create(request);
         return ResponseEntity.created(URI.create("/api/offres/" + response.id())).body(response);
     }
+
+    @PutMapping("/{id}")
+    public OffreResponse update(
+            @PathVariable Long id, @Valid @RequestBody UpdateOffreRequest request) {
+        return service.update(id, request);
+    }
 }

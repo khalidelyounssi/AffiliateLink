@@ -11,6 +11,13 @@ public interface OffreMapper {
     @Mapping(target = "campaigns", ignore = true)
     Offre toEntity(CreateOffreRequest request);
 
+    @BeanMapping(ignoreByDefault = true)
+    @Mapping(target = "title", source = "title")
+    @Mapping(target = "description", source = "description")
+    @Mapping(target = "landingUrl", source = "landingUrl")
+    @Mapping(target = "niche", source = "niche")
+    void update(UpdateOffreRequest request, @MappingTarget Offre offre);
+
     OffreResponse toResponse(Offre offre);
 
     default Set<String> tagNames(Set<Tag> tags) {
