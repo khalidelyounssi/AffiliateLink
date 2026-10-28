@@ -37,4 +37,18 @@ public class OffreService {
         log.info("Offre {} created for advertiser {}", saved.getId(), saved.getAdvertiserId());
         return mapper.toResponse(saved);
     }
+
+    @Transactional
+    public OffreResponse update(Long id, UpdateOffreRequest request) {
+        Offre offre =
+                repository
+                        .findLockedById(id)
+                        .orElseThrow(() -> new ResourceNotFoundException("Offre introuvable"));
+        mapper.update(request, offre);
+        Set<Tag> resolvedTags = tags.resolve(request.tags());
+        offre.replaceTags(resolvedTags);
+        repository.flush();
+        log.info("Offre {} updated", id);
+        return mapper.toResponse(offre);
+    }
 }
