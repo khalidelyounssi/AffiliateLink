@@ -28,4 +28,16 @@ public class OffreController {
             @PathVariable Long id, @Valid @RequestBody UpdateOffreRequest request) {
         return service.update(id, request);
     }
+
+    @GetMapping
+    public OffrePageResponse search(
+            @RequestParam(required = false) OfferNiche niche,
+            @RequestParam(required = false) Long advertiserId,
+            @RequestParam(required = false) String tag,
+            @RequestParam(required = false) String keyword,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "createdAt,desc") String sort) {
+        return service.search(niche, advertiserId, tag, keyword, page, size, sort);
+    }
 }
