@@ -54,6 +54,15 @@ public class OffreService {
     }
 
     @Transactional(readOnly = true)
+    public OffreDetailResponse findById(Long id) {
+        Offre offre =
+                repository
+                        .findById(id)
+                        .orElseThrow(() -> new ResourceNotFoundException("Offre introuvable"));
+        return mapper.toDetail(offre);
+    }
+
+    @Transactional(readOnly = true)
     public OffrePageResponse search(
             OfferNiche niche,
             Long advertiserId,

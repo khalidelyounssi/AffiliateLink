@@ -6,7 +6,7 @@ import org.mapstruct.*;
 import org.springframework.data.domain.Page;
 import java.util.*;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = CampaignMapper.class)
 public interface OffreMapper {
     @Mapping(target = "tags", ignore = true)
     @Mapping(target = "campaigns", ignore = true)
@@ -20,6 +20,8 @@ public interface OffreMapper {
     void update(UpdateOffreRequest request, @MappingTarget Offre offre);
 
     OffreResponse toResponse(Offre offre);
+
+    OffreDetailResponse toDetail(Offre offre);
 
     OffrePageResponse toPage(Page<Offre> page);
 
