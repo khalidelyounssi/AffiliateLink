@@ -1,0 +1,39 @@
+2026-11-03T19:11:29.455+01:00  INFO 3373 --- [AffiliateLink] [main] c.a.AffiliatelinkApplication             : Starting AffiliatelinkApplication using Java 27 with PID 3373 (/Users/macbook/Desktop/AffiliateLink/target/classes started by macbook in /Users/macbook/Desktop/AffiliateLink)
+2026-11-03T19:11:29.456+01:00 DEBUG 3373 --- [AffiliateLink] [main] c.a.AffiliatelinkApplication             : Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-11-03T19:11:29.456+01:00  INFO 3373 --- [AffiliateLink] [main] c.a.AffiliatelinkApplication             : The following 1 profile is active: "demo-mail"
+2026-11-03T19:11:29.483+01:00  INFO 3373 --- [AffiliateLink] [main] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file /Users/macbook/Desktop/AffiliateLink/compose.yaml
+2026-11-03T19:11:29.762+01:00  INFO 3373 --- [AffiliateLink] [main] .s.b.d.c.l.DockerComposeLifecycleManager : There are already Docker Compose services running, skipping startup
+2026-11-03T19:11:30.219+01:00  INFO 3373 --- [AffiliateLink] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-03T19:11:30.242+01:00  INFO 3373 --- [AffiliateLink] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 6 JPA repository interfaces.
+2026-11-03T19:11:30.411+01:00  INFO 3373 --- [AffiliateLink] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-11-03T19:11:30.416+01:00  INFO 3373 --- [AffiliateLink] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-03T19:11:30.416+01:00  INFO 3373 --- [AffiliateLink] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-11-03T19:11:30.432+01:00  INFO 3373 --- [AffiliateLink] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 447 ms
+2026-11-03T19:11:30.555+01:00  INFO 3373 --- [AffiliateLink] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://127.0.0.1:5432/affiliatelink?ApplicationName=AffiliateLink (PostgreSQL 17.11)
+2026-11-03T19:11:30.593+01:00  INFO 3373 --- [AffiliateLink] [main] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.012s)
+2026-11-03T19:11:30.616+01:00  INFO 3373 --- [AffiliateLink] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 3
+2026-11-03T19:11:30.617+01:00  INFO 3373 --- [AffiliateLink] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-11-03T19:11:30.656+01:00  INFO 3373 --- [AffiliateLink] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-03T19:11:30.681+01:00  INFO 3373 --- [AffiliateLink] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-11-03T19:11:30.812+01:00  INFO 3373 --- [AffiliateLink] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-03T19:11:30.823+01:00  INFO 3373 --- [AffiliateLink] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-03T19:11:30.844+01:00  INFO 3373 --- [AffiliateLink] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@41b66d1
+2026-11-03T19:11:30.844+01:00  INFO 3373 --- [AffiliateLink] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-03T19:11:30.872+01:00  INFO 3373 --- [AffiliateLink] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://127.0.0.1:5432/affiliatelink?ApplicationName=AffiliateLink]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: affiliatelink/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-03T19:11:31.262+01:00  INFO 3373 --- [AffiliateLink] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-03T19:11:31.287+01:00  INFO 3373 --- [AffiliateLink] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-03T19:11:31.317+01:00  INFO 3373 --- [AffiliateLink] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-03T19:11:31.744+01:00  INFO 3373 --- [AffiliateLink] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-11-03T19:11:31.746+01:00  INFO 3373 --- [AffiliateLink] [main] o.s.s.config.TaskSchedulerRouter         : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2026-11-03T19:11:31.748+01:00  INFO 3373 --- [AffiliateLink] [main] c.a.AffiliatelinkApplication             : Started AffiliatelinkApplication in 2.444 seconds (process running for 2.569)
