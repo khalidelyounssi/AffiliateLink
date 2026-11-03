@@ -1,5 +1,6 @@
 package com.affiliateLink.offer.mapper;
 
+import com.affiliateLink.offer.CampaignSnapshot;
 import com.affiliateLink.offer.dto.*;
 import com.affiliateLink.offer.entity.Campaign;
 import org.mapstruct.*;
@@ -14,4 +15,8 @@ public interface CampaignMapper {
     CampaignResponse toResponse(Campaign campaign);
 
     List<CampaignResponse> toResponses(List<Campaign> campaigns);
+
+    @Mapping(target = "offreId", source = "offre.id")
+    @Mapping(target = "advertiserId", source = "offre.advertiserId")
+    CampaignSnapshot toSnapshot(Campaign campaign);
 }
