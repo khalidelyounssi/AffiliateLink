@@ -30,4 +30,10 @@ public class CampaignController {
         service.changeStatus(id, request.status());
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/api/campaigns")
+    public List<CampaignResponse> list(
+            @RequestParam(defaultValue = "ACTIVE") CampaignStatus status) {
+        return service.findByStatus(status);
+    }
 }
