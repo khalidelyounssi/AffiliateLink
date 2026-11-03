@@ -94,4 +94,9 @@ public class CampaignService {
         campaigns.flush();
         log.info("Campaign {} changed to {}", id, next);
     }
+
+    @Transactional(readOnly = true)
+    public List<CampaignResponse> findByStatus(CampaignStatus status) {
+        return mapper.toResponses(campaigns.findByStatusOrderByIdAsc(status));
+    }
 }
