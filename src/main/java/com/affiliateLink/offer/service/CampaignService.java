@@ -62,4 +62,36 @@ public class CampaignService {
             throw new InputValidationException("payoutValue", "Doit être strictement positif");
         }
     }
+
+    @Transactional
+    public void changeStatus(Long id, CampaignStatus next) {
+        Long offreId =
+                campaigns
+                        .findOffreId(id)
+                        .orElseThrow(() -> new ResourceNotFoundException("Campagne introuvable"));
+        Long owner =
+                offres.findAdvertiserId(offreId)
+                        .orElseThrow(() -> new ResourceNotFoundException("Offre introuvable"));
+        if (next == CampaignStatus.ACTIVE) {
+            profiles.requireActiveAdvertiser(owner);
+        }
+        offres.findLockedById(offreId)
+                .orElseThrow(() -> new ResourceNotFoundException("Offre introuvable"));
+        Campaign target =
+                campaigns
+                        .findById(id)
+                        .orElseThrow(() -> new ResourceNotFoundException("Campagne introuvable"));
+        LocalDate today = LocalDate.now();
+        target.checkTransition(next, today);
+        if (next == CampaignStatus.ACTIVE) {
+            for (Campaign old :
+                    campaigns.findByOffreIdAndStatusOrderByIdAsc(offreId, CampaignStatus.ACTIVE)) {
+                old.changeStatus(CampaignStatus.PAUSED, today);
+            }
+            campaigns.flush();
+        }
+        target.changeStatus(next, today);
+        campaigns.flush();
+        log.info("Campaign {} changed to {}", id, next);
+    }
 }
