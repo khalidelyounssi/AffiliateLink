@@ -21,7 +21,13 @@ public class CampaignController {
     public ResponseEntity<CampaignResponse> create(
             @PathVariable Long id, @Valid @RequestBody CreateCampaignRequest request) {
         CampaignResponse response = service.create(id, request);
-        // The nested list is available in the existing offer-detail endpoint.
         return ResponseEntity.created(URI.create("/api/offres/" + id)).body(response);
+    }
+
+    @PatchMapping("/api/campaigns/{id}/status")
+    public ResponseEntity<Void> changeStatus(
+            @PathVariable Long id, @Valid @RequestBody ChangeCampaignStatusRequest request) {
+        service.changeStatus(id, request.status());
+        return ResponseEntity.noContent().build();
     }
 }
