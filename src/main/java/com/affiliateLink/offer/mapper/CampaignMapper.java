@@ -7,6 +7,9 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface CampaignMapper {
+    @Mapping(target = "offre", ignore = true)
+    Campaign toEntity(CreateCampaignRequest request);
+
     @Mapping(target = "offreId", source = "offre.id")
     CampaignResponse toResponse(Campaign campaign);
 
