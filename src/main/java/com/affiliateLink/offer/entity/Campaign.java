@@ -61,6 +61,30 @@ public class Campaign {
         offre.addCampaign(this);
     }
 
+    public void checkTransition(CampaignStatus next, LocalDate today) {
+        boolean allowed = false;
+
+        if (status == CampaignStatus.DRAFT) {
+            allowed = next == CampaignStatus.ACTIVE;
+        } else if (status == CampaignStatus.ACTIVE) {
+            allowed = next == CampaignStatus.PAUSED || next == CampaignStatus.ENDED;
+        } else if (status == CampaignStatus.PAUSED) {
+            allowed = next == CampaignStatus.ACTIVE || next == CampaignStatus.ENDED;
+        }
+
+        if (!allowed) {
+            throw new BusinessConflictException("Transition interdite : " + status + " -> " + next);
+        }
+        if (next == CampaignStatus.ACTIVE && endDate.isBefore(today)) {
+            throw new BusinessConflictException("Campagne expirée");
+        }
+    }
+
+    public void changeStatus(CampaignStatus next, LocalDate today) {
+        checkTransition(next, today);
+        this.status = next;
+    }
+
     public Long getId() {
         return id;
     }
