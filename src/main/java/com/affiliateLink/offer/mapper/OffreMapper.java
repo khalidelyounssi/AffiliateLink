@@ -7,7 +7,7 @@ import org.springframework.data.domain.Page;
 import java.util.*;
 
 @Mapper(componentModel = "spring", uses = CampaignMapper.class)
-public interface OffreMapper {
+public interface  OffreMapper {
     @Mapping(target = "tags", ignore = true)
     @Mapping(target = "campaigns", ignore = true)
     Offre toEntity(CreateOffreRequest request);
